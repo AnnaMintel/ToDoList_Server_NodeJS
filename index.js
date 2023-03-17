@@ -1,17 +1,12 @@
-// const CC = require('currency-converter-lt');
-// let currencyConverter = new CC({from:"USD", to:"EUR", amount:100});
+const express = require('express');
 
-// currencyConverter.convert().then((response) => {
-//     console.log(`result: ${response}`)
-// })
+const app = express();
+const PORT = 8000;
 
-// подключаем свои модули
-// const os = require('os');
-// let res = os.platform();
-// console.log(res)
+app.listen(PORT, () => {
+    console.log('app started')
+})
 
-// const my_math = require('./my_math')
-// let res1 = my_math.add(5, 4)
-// let res2 = my_math.minus(10, 6)
-// console.log(`res1: ${res1}, res2: ${res2}`)
-
+app.get('/', (req, res) => {
+    res.send('Server work')
+})
